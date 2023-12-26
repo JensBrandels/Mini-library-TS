@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+   display: flex;
+   justify-content: center;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1280px;
+}
+
+div{
+    margin: 1rem;
+    height: 20rem;
+    width: 15rem;
+    padding-left: 1.2rem;
+}
+
+article{
+    height: 100%;
+    width: 100%;
+    border-left: rgba(0, 0, 0, 0.342) 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 1.3rem;
+}
+
+h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+p{
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
