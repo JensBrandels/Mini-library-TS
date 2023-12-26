@@ -22,11 +22,11 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 1280px;
+    width: 1080px;
+    gap: 1rem;
 }
 
-div{
-    margin: 1rem;
+.bookDiv{
     height: 20rem;
     width: 15rem;
     padding-left: 1.2rem;
@@ -51,4 +51,77 @@ p{
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
+}
+
+.modal{
+    width: 70rem;
+    height: 50rem; 
+    background: linear-gradient(0deg, #222 0%, #222 100%), #EEE;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 5rem;
+    padding-left: 15rem;
+    flex-direction: column;
+}
+
+.backBtn{
+    width: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.bookInfo{
+    display: flex;
+    gap: 2rem;
+    height: 50rem;
+    width: 40rem;
+}
+
+.infoText{
+    width: 20rem;
+}
+
+.infoText p:nth-child(2){
+    margin-top: 0.3rem;
+}
+
+.infoText p:nth-child(3){
+    margin-top: 1rem;
+}
+
+.infoBox{
+    height: 4.375rem; 
+    width: 20rem;
+    background-color: #C4C4C414;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: left;
+}
+
+.infoBox p {
+    font-size: 10px;
+}
+
+.infoBox p:nth-child(1){
+    padding-bottom: 0.5rem;
+}
+.infoBox p:nth-child(3){
+    margin: 0;
+    padding-bottom: 0.6rem;
+}
+.infoBox p:nth-child(4){
+    padding-bottom: 0.1rem;
+}
+
+button{
+    margin-top: 1rem;
+    padding: 0.4rem;
 }
