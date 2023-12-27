@@ -1,13 +1,4 @@
-interface Book{
-    title: string;
-    author: string;
-    plot: string;
-    audience: string;
-    year: number
-    pages: number;
-    publisher: string;
-    color?: string;
-}
+import{Book} from "./interface.js"
 
 //svg link as button to get back
 const svgLink = `<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">

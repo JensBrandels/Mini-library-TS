@@ -77,12 +77,13 @@ p{
 .bookInfo{
     display: flex;
     gap: 2rem;
-    height: 50rem;
-    width: 40rem;
+    height: 20rem;
+    width: 45rem;
 }
 
 .infoText{
     width: 20rem;
+    height: 20rem;
 }
 
 .infoText p:nth-child(2){
