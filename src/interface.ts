@@ -1,3 +1,5 @@
+type hexcolor=string;
+
 interface Book{
     title: string;
     author: string;
@@ -6,7 +8,7 @@ interface Book{
     year: number
     pages: number;
     publisher: string;
-    color?: string;
+    color: hexcolor;
 }
 
 export {Book}
