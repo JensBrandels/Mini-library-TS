@@ -18,6 +18,7 @@ function fetchBookData() {
         try {
             const response = yield fetch('https://my-json-server.typicode.com/zocom-christoffer-wallenberg/books-api/books');
             const data = yield response.json();
+            console.log(data);
             useBookData(data);
         }
         catch (error) {
@@ -97,6 +98,7 @@ function showOrHideModal() {
     backBtn.innerHTML = svgLink;
     modal.appendChild(backBtn);
     backBtn.addEventListener("click", () => {
-        modal.style.display = "";
+        modal.style.display = "none";
     });
 }
+export {};

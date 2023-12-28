@@ -15,7 +15,7 @@ async function fetchBookData(): Promise<Book[]> {
     try {
         const response = await fetch('https://my-json-server.typicode.com/zocom-christoffer-wallenberg/books-api/books')
         const data: Book[] = await response.json();
-        // console.log(data);
+        console.log(data);
         // return data
         useBookData(data)
     } catch(error){
@@ -138,6 +138,6 @@ function showOrHideModal():void {
 
     //make the button clickable to get back/hide modal
     backBtn.addEventListener("click", ():void => {
-        modal.style.display = ""
+        modal.style.display = "none"
     })
 }
