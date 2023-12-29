@@ -48,18 +48,18 @@ function displayBookList(bookData) {
     });
 }
 function updateBookList(bookData) {
-    const showFilteredBooks = (books) => {
+    const displayBooks = (books) => {
         content.innerHTML = "";
         displayBookList(books);
     };
-    showFilteredBooks(bookData);
+    displayBooks(bookData);
     const inputField = document.getElementById("myInput");
     inputField.addEventListener("input", (event) => {
         const searchText = event.target.value.toLowerCase();
         const filteredBooks = bookData.filter((book) => {
             return book.title.toLowerCase().includes(searchText);
         });
-        showFilteredBooks(filteredBooks);
+        displayBooks(filteredBooks);
     });
 }
 function createBookDiv(book) {

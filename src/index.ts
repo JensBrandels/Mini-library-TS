@@ -13,7 +13,7 @@ let modal = document.getElementById("myModal") as HTMLElement;
 let content = document.getElementById("allBooks") as HTMLElement;
 
 //Fetch function to get book data from the API
-const fetchBookData = async(): Promise<Book[]> => {
+const fetchBookData = async (): Promise<Book[]> => {
   try {
     const response = await fetch(API);
     const data: Book[] = await response.json();
@@ -23,7 +23,7 @@ const fetchBookData = async(): Promise<Book[]> => {
     console.log("Failed to fetch API", error);
     return [];
   }
-}
+};
 
 //Function to initialize the page
 async function initializePage(): Promise<void> {
@@ -57,12 +57,12 @@ function displayBookList(bookData: Book[]) {
 //Function to update the book list based on input
 function updateBookList(bookData: Book[]) {
   //This function is to show the books that we have filtered
-  const showFilteredBooks = (books: Book[]) => {
+  const displayBooks = (books: Book[]) => {
     content.innerHTML = "";
     displayBookList(books); //this is the function that loops through the API array objects and show them on the page
   };
   //call on the filter function
-  showFilteredBooks(bookData);
+  displayBooks(bookData);
 
   //input DOM
   const inputField = document.getElementById("myInput") as HTMLElement;
@@ -73,7 +73,7 @@ function updateBookList(bookData: Book[]) {
     const filteredBooks = bookData.filter((book) => {
       return book.title.toLowerCase().includes(searchText);
     });
-    showFilteredBooks(filteredBooks);
+    displayBooks(filteredBooks);
   });
 }
 
