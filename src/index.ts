@@ -13,7 +13,7 @@ let modal = document.getElementById("myModal") as HTMLElement;
 let content = document.getElementById("allBooks") as HTMLElement;
 
 //Fetch function to get book data from the API
-async function fetchBookData(): Promise<Book[]> {
+const fetchBookData = async(): Promise<Book[]> => {
   try {
     const response = await fetch(API);
     const data: Book[] = await response.json();

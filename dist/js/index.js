@@ -14,19 +14,17 @@ const svgLink = `<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xml
 </svg>`;
 let modal = document.getElementById("myModal");
 let content = document.getElementById("allBooks");
-function fetchBookData() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch(API);
-            const data = yield response.json();
-            return data;
-        }
-        catch (error) {
-            console.log("Failed to fetch API", error);
-            return [];
-        }
-    });
-}
+const fetchBookData = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield fetch(API);
+        const data = yield response.json();
+        return data;
+    }
+    catch (error) {
+        console.log("Failed to fetch API", error);
+        return [];
+    }
+});
 function initializePage() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
