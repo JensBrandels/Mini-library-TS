@@ -1,26 +1,26 @@
 import { Book } from "./interface.js";
 
 //constant variables
-const API =
+const API: string =
   "https://my-json-server.typicode.com/zocom-christoffer-wallenberg/books-api/books";
-const svgLink = `<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+const svgLink: string = `<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="19" cy="19" r="19" fill="#8A8A8A"/>
 <path d="M6.29289 18.2929C5.90237 18.6834 5.90237 19.3166 6.29289 19.7071L12.6569 26.0711C13.0474 26.4616 13.6805 26.4616 14.0711 26.0711C14.4616 25.6805 14.4616 25.0474 14.0711 24.6569L8.41421 19L14.0711 13.3431C14.4616 12.9526 14.4616 12.3195 14.0711 11.9289C13.6805 11.5384 13.0474 11.5384 12.6569 11.9289L6.29289 18.2929ZM31 18L7 18V20L31 20V18Z" fill="black" fill-opacity="0.8"/>
 </svg>`;
 
 //Global variables
-let modal = document.getElementById("myModal") as HTMLElement;
-let content = document.getElementById("allBooks") as HTMLElement;
+let modal: HTMLElement = document.getElementById("myModal") as HTMLElement;
+let content: HTMLElement = document.getElementById("allBooks") as HTMLElement;
 
 //Fetch function to get book data from the API
 const fetchBookData = async (): Promise<Book[]> => {
   try {
-    const response = await fetch(API);
+    const response: Response = await fetch(API);
     const data: Book[] = await response.json();
     // console.log(data);
     return data;
   } catch (error) {
-    console.log("Failed to fetch API", error);
+    console.log("Failed to fetch API", error as Error);
     return [];
   }
 };
@@ -31,7 +31,7 @@ async function initializePage(): Promise<void> {
     const bookData: Book[] = await fetchBookData();
     updateBookList(bookData);
   } catch (error) {
-    console.log("Failed to initialize", error);
+    console.log("Failed to initialize", error as Error);
   }
 }
 
@@ -56,18 +56,18 @@ function displayBookList(bookData: Book[]) {
 
 //Function to update the book list based on input
 function updateBookList(bookData: Book[]) {
-  //This function is to show the books that we have filtered
+
+  //this function displays the books before we filter them
   const displayBooks = (books: Book[]) => {
     content.innerHTML = "";
     displayBookList(books); //this is the function that loops through the API array objects and show them on the page
   };
-  //call on the filter function
+  
   displayBooks(bookData);
 
-  //input DOM
   const inputField = document.getElementById("myInput") as HTMLElement;
   //add a listener to the inputfield
-  inputField.addEventListener("input", (event) => {
+  inputField.addEventListener("input", (event: Event) => {
     const searchText = (event.target as HTMLInputElement).value.toLowerCase(); //get the value
     //function to filter and compare it to the value
     const filteredBooks = bookData.filter((book) => {
